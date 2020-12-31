@@ -310,7 +310,7 @@ bar {
   position top
   font $i3-wm.bar.font
   separator_symbol " "
-  status_command /usr/local/bin/conky-top-i3bar
+  status_command ~/.scripts/regolith/i3/conky-top-i3bar
   tray_output none 
   workspace_buttons no
 
@@ -332,7 +332,6 @@ bar {
   font $i3-wm.bar.font
   separator_symbol " "
   status_command i3xrocks -c $i3xrocks_config
-  #status_command /usr/local/bin/conky-i3bar
   tray_output primary
   strip_workspace_numbers yes
 
