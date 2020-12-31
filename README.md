@@ -4,5 +4,7 @@
 ## Getting started
 
 `git clone`
+
 `cd .dotfiles`
+
 `stow -nvvt ~ <package>`
