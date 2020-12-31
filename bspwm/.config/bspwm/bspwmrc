@@ -5,7 +5,7 @@
 # autostart applications
 #
 sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
-$HOME/.config/polybar/launch.sh
+$HOME/.scripts/polybar/launch.sh
 
 picom &
 
