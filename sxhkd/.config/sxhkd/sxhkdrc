@@ -4,7 +4,7 @@
 
 # show help on key bindings
 super + F1
-	urxvt -geometry 100X30 -name urxvt_keys_help -e $HOME/.config/sxhkd/show_help.sh
+	urxvt -geometry 100X30 -name urxvt_keys_help -e $HOME/.scripts/sxhkd/show_help.sh
 
 # terminal emulator
 super + Return
@@ -30,9 +30,13 @@ super + ctrl + r
 # bspwm hotkeys
 #
 
-# quit/restart bspwm
-super + alt + {q,r}
-	bspc {quit,wm -r}
+# restart bspwm
+super + alt + r
+	bspc wm -r; notify-send 'bspwm' 'Configuration reloaded.'
+
+# quit bspwm
+super + alt + q
+	prompt "Are you sure you would like to quit bpswm" "bspc quit"
 
 # close and kill
 super + {_,shift + }w
