@@ -17,13 +17,13 @@ super + @space
 # program launcher
 super + shift + @space
 	rofi -show run
- 
+
 # switch windows
 super + alt + @space
 	rofi -show window
 
 # make sxhkd reload its configuration files:
-super + ctrl + r 
+super + ctrl + r
 	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Configuration reloaded.'
 
 #
@@ -71,11 +71,11 @@ super + ctrl + {m,x,y,z}
 #
 
 # cycle through nodes
-super + {Left,Right}
+super + shift + {Left,Right}
 	bspc node -f {prev,next}
 
 # cycle through desktops
-super + shift + {Left,Right}
+super + ctrl + {Left,Right}
 	bspc desktop -f {prev,next}
 
 # send to desktop and swap to desktop
