@@ -109,20 +109,3 @@ bindkey '^e' edit-command-line
 # Load and configure powerlevel9k theme
 #[ -f "$HOME/.config/zsh/powerlevelrc" ] && source "$HOME/.config/zsh/powerlevelrc"
 #[ -f "/usr/share/powerlevel9k/powerlevel9k.zsh-theme" ] && source "/usr/share/powerlevel9k/powerlevel9k.zsh-theme"
-
-zplug "plugins/git", from:oh-my-zsh
-
-zplug "plugins/colorize", from:oh-my-zsh
-
-zplug "plugins/virtualenv", from:oh-my-zsh
-
-zplug "plugins/virtualenvwrapper", from:oh-my-zsh
-
-zplug "zsh-users/zsh-autosuggestions"
-
-# zplug "zsh-users/zsh-history-substring-search"
-
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-
-# Source plugins and add commands to $PATH
-zplug load
