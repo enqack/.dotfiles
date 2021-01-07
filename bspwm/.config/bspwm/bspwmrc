@@ -14,6 +14,7 @@ feh --bg-fill $HOME/.config/wall.png &
 dunst &
 
 xrdb $HOME/.Xresources
+xrdb $HOME/.Xresources.d/*
 
 
 #
@@ -39,5 +40,5 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Lxappearance state=floating center=true
-bspc rule -a 'Terminator:Preferences' state=floating
+bspc rule -a Terminator:Preferences state=floating
 bspc rule -a Gnome-tweaks state=floating center=true
