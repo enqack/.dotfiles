@@ -2,5 +2,7 @@ configuration {
   show-icons: true;
   fullscreen: true;
   theme: "regolith-theme";
+  font: "DejaVu Sans 16";
+  modi: "window,run,drun,ssh";
 }
 
