@@ -109,3 +109,5 @@ bindkey '^e' edit-command-line
 # Load and configure powerlevel9k theme
 #[ -f "$HOME/.config/zsh/powerlevelrc" ] && source "$HOME/.config/zsh/powerlevelrc"
 #[ -f "/usr/share/powerlevel9k/powerlevel9k.zsh-theme" ] && source "/usr/share/powerlevel9k/powerlevel9k.zsh-theme"
+
+export PATH="$PATH:$HOME/.scripts"
