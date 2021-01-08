@@ -28,7 +28,7 @@ super + ctrl + r
 
 # lock screen
 super + Escape
-  i3lock --color 000000 --show-failed-attempts --ignore-empty-password --image $HOME/.config/wall.png
+  i3lock --color 000000 --show-failed-attempts --ignore-empty-password
 
 #
 # bspwm hotkeys
