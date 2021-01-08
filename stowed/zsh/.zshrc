@@ -97,11 +97,8 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 # Load aliases and shortcuts if existent.
-[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
-[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
-
-# Load zplug plugin management system
-[ -f "/usr/share/zplug/init.zsh" ] && source "/usr/share/zplug/init.zsh"
+[ -f "$HOME/.config/zsh/shortcutrc" ] && source "$HOME/.config/zsh/shortcutrc"
+[ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
 
 # Load zsh-syntax-highlighting settings
 [ -f "$HOME/.config/zsh/highlightingrc" ] && source "$HOME/.config/zsh/highlightingrc"
