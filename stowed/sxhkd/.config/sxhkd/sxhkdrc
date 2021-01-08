@@ -26,6 +26,10 @@ super + alt + @space
 super + ctrl + r
 	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Configuration reloaded.'
 
+# lock screen
+super + Escape
+  i3lock --color 000000 --show-failed-attempts --ignore-empty-password --image $HOME/.config/wall.png
+
 #
 # bspwm hotkeys
 #
