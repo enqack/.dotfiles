@@ -16,6 +16,8 @@ dunst &
 xrdb $HOME/.Xresources
 xrdb $HOME/.Xresources.d/*
 
+$HOME/.scripts/bspwm/autolocker &
+
 
 #
 # bspc configuration
