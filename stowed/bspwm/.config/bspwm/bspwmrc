@@ -24,6 +24,7 @@ killall conky
 
 blueman-applet &
 
+killall volumeicon
 volumeicon &
 
 
