@@ -24,7 +24,7 @@ super + alt + @space
 
 # make sxhkd reload its configuration files:
 super + ctrl + r
-	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Configuration reloaded.'
+	pkill -USR1 -x sxhkd && notify-send 'sxhkd' 'Configuration reloaded.'
 
 # lock screen
 super + Escape
@@ -36,7 +36,7 @@ super + Escape
 
 # restart bspwm
 super + alt + r
-	bspc wm -r; notify-send 'bspwm' 'Configuration reloaded.'
+	bspc wm --restart && notify-send 'bspwm' 'Configuration reloaded.'
 
 # quit bspwm
 super + alt + q
