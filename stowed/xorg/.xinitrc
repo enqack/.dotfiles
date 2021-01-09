@@ -1,0 +1,1 @@
+pgrep bspwm || exec bspwm
