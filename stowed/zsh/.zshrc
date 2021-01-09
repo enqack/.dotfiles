@@ -100,7 +100,7 @@ bindkey '^e' edit-command-line
 [ -f "$HOME/.config/zsh/shortcutrc" ] && source "$HOME/.config/zsh/shortcutrc"
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
 
-# Load environment virables
+# Load environment variables
 [ -f "$HOME/.config/zsh/envrc" ] && source "$HOME/.config/zsh/envrc"
 
 # Load zsh-syntax-highlighting settings
