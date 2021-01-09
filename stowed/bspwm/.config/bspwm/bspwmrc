@@ -18,6 +18,8 @@ xrdb $HOME/.Xresources.d/*
 
 $HOME/.scripts/bspwm/autolocker &
 
+killall conky
+/usr/bin/conky -q -c ~/.config/conky/conkyrc &
 
 #
 # bspc configuration
