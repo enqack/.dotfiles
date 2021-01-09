@@ -5,6 +5,7 @@
 # autostart applications
 #
 sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
+
 $HOME/.scripts/polybar/launch.sh &
 
 picom &
@@ -20,6 +21,11 @@ $HOME/.scripts/bspwm/autolocker &
 
 killall conky
 /usr/bin/conky -q -c ~/.config/conky/conkyrc &
+
+blueman-applet &
+
+volumeicon &
+
 
 #
 # bspc configuration
