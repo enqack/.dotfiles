@@ -100,6 +100,9 @@ bindkey '^e' edit-command-line
 [ -f "$HOME/.config/zsh/shortcutrc" ] && source "$HOME/.config/zsh/shortcutrc"
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
 
+# Load environment virables
+[ -f "$HOME/.config/zsh/envrc" ] && source "$HOME/.config/zsh/envrc"
+
 # Load zsh-syntax-highlighting settings
 [ -f "$HOME/.config/zsh/highlightingrc" ] && source "$HOME/.config/zsh/highlightingrc"
 
@@ -107,4 +110,3 @@ bindkey '^e' edit-command-line
 #[ -f "$HOME/.config/zsh/powerlevelrc" ] && source "$HOME/.config/zsh/powerlevelrc"
 #[ -f "/usr/share/powerlevel9k/powerlevel9k.zsh-theme" ] && source "/usr/share/powerlevel9k/powerlevel9k.zsh-theme"
 
-export PATH="$PATH:$HOME/.scripts"
