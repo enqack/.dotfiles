@@ -60,6 +60,7 @@ ${color2}$hr
 ${color1}File systems:
  / $color3${fs_used /}/${fs_size /} ${fs_bar 6 /}
  /home $color3${fs_used /home}/${fs_size /home} ${fs_bar 6 /home}
+ /mnt/backup $color3${fs_used /mnt/backup}/${fs_size /mnt/backup} ${fs_bar 6 /mnt/backup}
 ${color1}Networking:
 ${if_existing /sys/class/net/wlo2/operstate up} wlo2${color3} Up: ${upspeed wlo2} - Down: ${downspeed wlo2}${endif}
 ${if_existing /sys/class/net/enp4s0/operstate up} ${color1}enp4s0${color3} Up: ${upspeed enp4s0} - Down: ${downspeed enp4s0}${endif}
