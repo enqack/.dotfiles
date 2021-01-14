@@ -27,6 +27,8 @@ blueman-applet &
 killall volumeicon
 volumeicon &
 
+nm-applet &
+
 
 #
 # bspc configuration
@@ -59,3 +61,4 @@ bspc rule -a Terminator:Preferences state=floating
 bspc rule -a Gnome-tweaks state=floating center=true
 bspc rule -a Google-chrome desktop=^1 follow=true
 bspc rule -a Gimp-2.8 state=floating
+bspc rule -a Blueman-manager state=floating
