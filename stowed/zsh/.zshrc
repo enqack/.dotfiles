@@ -53,8 +53,8 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # Home and end key binding
-bindkey "\e[H" beginning-of-line
-bindkey "\e[F" end-of-line
+bindkey "^[[7~" beginning-of-line
+bindkey "^[[8~" end-of-line
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
