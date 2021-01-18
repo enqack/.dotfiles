@@ -12,6 +12,10 @@ fi
 
 alias ll='ls -alF'
 alias la='ls -A'
+alias lt='ls -ltr'
 alias l='ls -CF'
 
+# compile kernel with max threads
 alias genker='sudo genkernel all --makeopts=-j48'
+# emerge - update @system and @world
+alias emerge-update='sudo emerge -auDNv --with-bdeps y @system @world'
