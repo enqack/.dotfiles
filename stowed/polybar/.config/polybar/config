@@ -45,7 +45,7 @@ module-margin-right = 2
 
 modules-left = bspwm xwindow
 modules-center =
-modules-right = cpu-usage cpu-temperature memory filesystem date
+modules-right = cpu-usage memory filesystem date
 
 tray-position = right
 tray-padding = 2
@@ -83,7 +83,7 @@ module-margin-right = 2
 
 modules-left = bspwm xwindow
 modules-center =
-modules-right =
+modules-right = date
 
 tray-position = none
 
