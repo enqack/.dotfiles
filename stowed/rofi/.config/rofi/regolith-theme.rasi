@@ -16,7 +16,7 @@
   yellow:     #b58900;
   red:	      #dc322f;
   blue:       #268bd2;
-  cyan:       #2aa198;	
+  cyan:       #2aa198;
   black:      #000000;
 
   spacing: 0;
@@ -27,7 +27,7 @@
 
 window {
   transparency: "real";
-  background-color: #222222ee;
+  background-color: #1b1b1bee;
 }
 
 mainbox {
