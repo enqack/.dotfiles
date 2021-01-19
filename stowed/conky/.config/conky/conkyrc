@@ -63,8 +63,8 @@ ${color1}File systems:
  /mnt/backup $color3${fs_used /mnt/backup}/${fs_size /mnt/backup} ${fs_bar 6 /mnt/backup}
 ${color1}Networking:
 ${if_existing /sys/class/net/wlo2/operstate up} wlo2${color3} Up: ${upspeed wlo2} - Down: ${downspeed wlo2}${endif}
-${if_existing /sys/class/net/eth0/operstate up} ${color1}eth0${color3} Up: ${upspeed eth0} - Down: ${downspeed eth0}${endif}
-${if_existing /sys/class/net/eth1/operstate up} ${color1}eth1${color3} Up: ${upspeed eth1} - Down: ${downspeed eth1}${endif}
+${if_existing /sys/class/net/enp4s0/operstate up} ${color1}enp4s0${color3} Up: ${upspeed enp4s0} - Down: ${downspeed enp4s0}${endif}
+${if_existing /sys/class/net/enp6s0/operstate up} ${color1}enp6s0${color3} Up: ${upspeed enp6s0} - Down: ${downspeed enp6s0}${endif}
 ${color2}$hr
 ${color1}Name              PID     CPU%   MEM%
 ${color3} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
