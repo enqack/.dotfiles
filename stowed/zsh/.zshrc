@@ -34,6 +34,11 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
+# Mail notification
+MAILCHECK=1
+MAILPATH=$HOME/.maildir
+autoload checkmail
+
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
