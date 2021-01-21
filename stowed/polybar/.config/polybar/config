@@ -45,7 +45,7 @@ module-margin-right = 2
 
 modules-left = bspwm xwindow
 modules-center =
-modules-right = cpu-usage memory filesystem date
+modules-right = packageupdates cpu-usage memory filesystem date
 
 tray-position = right
 tray-padding = 2
@@ -179,5 +179,12 @@ exec = $HOME/.scripts/polybar/polytempamd
 label = "@ %output%°C"
 format-prefix="🔥"
 interval = 10
+
+[module/packageupdates]
+type = custom/script
+exec = $HOME/.scripts/polybar/packageupdates
+label = "Updates: %output%"
+interval = 3600
+
 
 ; vim:ft=dosini
