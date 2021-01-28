@@ -1,7 +1,7 @@
 # vim: set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 
 conky.config = {
-    alignment = 'top_middle',
+    alignment = 'top_right',
     background = true,
     border_width = 1,
     cpu_avg_samples = 2,
@@ -20,8 +20,8 @@ conky.config = {
     draw_shades = false,
     extra_newline = false,
     font = 'DejaVu Sans Mono:size=10',
-    gap_x = 225,
-    gap_y = 40,
+    gap_x = 10,
+    gap_y = 10,
     maximum_width = 400,
     minimum_height = 5,
     minimum_width = 400,
