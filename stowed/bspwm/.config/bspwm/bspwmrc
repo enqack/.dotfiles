@@ -17,9 +17,10 @@ dunst &
 xrdb -merge $HOME/.Xresources
 xrdb -merge $HOME/.Xresources.d/*
 
+killall xautolock
 $HOME/.scripts/bspwm/autolocker &
 
-killall conky
+killall -9 conky
 /usr/bin/conky -q -c ~/.config/conky/conkyrc &
 
 blueman-applet &
@@ -27,7 +28,11 @@ blueman-applet &
 killall volumeicon
 volumeicon &
 
+killall nm-applet
 nm-applet &
+
+killall barrier
+barrier &
 
 xsetroot -cursor_name left_ptr
 
