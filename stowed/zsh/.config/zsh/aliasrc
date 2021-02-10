@@ -16,10 +16,10 @@ alias lt='ls -ltr'
 alias l='ls -CF'
 
 # compile kernel with max threads
-alias genker='sudo genkernel all --makeopts=-j48'
+alias genker='sudo genkernel all --makeopts=-j$(nproc)'
 
 # sync emerge and layman
-alias emerge-sync='sudo layman -S && sudo emerge --sync'
+alias emerge-sync='sudo layman --sync-all && sudo emerge --sync'
 # update @system and @world
 alias emerge-update='sudo emerge -auDNv --with-bdeps y @system @world'
 
