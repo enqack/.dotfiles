@@ -10,7 +10,7 @@ $HOME/.scripts/polybar/launch.sh &
 
 picom &
 
-feh --bg-fill $HOME/.config/wall.png &
+nitrogen --restore &
 
 dunst &
 
