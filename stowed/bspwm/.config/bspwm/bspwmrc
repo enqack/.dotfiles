@@ -46,8 +46,8 @@ bspc monitor DP-0 -d 6 7 8 9 0
 # secondary
 bspc monitor DP-3 -d 1 2 3 4 5
 
-bspc config top_padding          0
-bspc config bottom_padding       35
+bspc config top_padding          35
+bspc config bottom_padding       0
 bspc config border_width         2
 bspc config window_gap           5
 
@@ -55,7 +55,7 @@ bspc config split_ratio            0.52
 bspc config borderless_monocle     true
 bspc config gapless_monocle        true
 bspc config focus_follows_pointer  false
-bspc config click_to_focus         true
+bspc config click_to_focus         button1
 
 
 bspc rule -a URxvt:urxvt_keys_help state=floating
