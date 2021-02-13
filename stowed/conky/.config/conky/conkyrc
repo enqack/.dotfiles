@@ -46,7 +46,7 @@ conky.config = {
 }
 
 conky.text = [[
-${color1}${font DejaVu Sans Mono:size=13}Host:${color3} $nodename
+${color1}${font DejaVuSansMono Nerd Font, Book:size=13}Host:${color3} $nodename
 ${color1}Kernel:${color3} $kernel $machine${font}
 ${color2}$hr
 ${color1}Uptime:$color3 $uptime
