@@ -8,6 +8,8 @@ sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
 
 $HOME/.scripts/polybar/launch.sh &
 
+$HOME/.scripts/bspwm/cleanfullscreen &
+
 picom &
 
 nitrogen --restore &
@@ -46,16 +48,21 @@ bspc monitor DP-0 -d 6 7 8 9 0
 # secondary
 bspc monitor DP-3 -d 1 2 3 4 5
 
-bspc config top_padding          35
-bspc config bottom_padding       0
-bspc config border_width         2
-bspc config window_gap           5
+bspc config top_padding           35
+bspc config bottom_padding        0
+bspc config border_width          2
+bspc config window_gap            5
 
-bspc config split_ratio            0.52
-bspc config borderless_monocle     true
-bspc config gapless_monocle        true
-bspc config focus_follows_pointer  false
-bspc config click_to_focus         button1
+bspc config pointer_modifier      lock
+bspc config pointer_action1       move
+bspc config pointer_action2       resize_side
+bspc config pointer_action3       resize_corner
+
+bspc config split_ratio           0.52
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+bspc config focus_follows_pointer false
+bspc config click_to_focus        button1
 
 
 bspc rule -a URxvt:urxvt_keys_help state=floating
