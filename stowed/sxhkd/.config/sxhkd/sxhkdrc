@@ -44,7 +44,7 @@ super + alt + r
 
 # quit bspwm
 super + alt + q
-	prompt "Are you sure you would like to quit bpswm" "bspc quit"
+	prompt "Are you sure you would like to quit bpswm?" "bspc quit"
 
 # close and kill
 super + {_,shift + }w
