@@ -40,8 +40,8 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left = 1
+module-margin-right = 1
 
 modules-left = bspwm xwindow
 modules-center =
@@ -78,12 +78,12 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left = 1
+module-margin-right = 1
 
 modules-left = bspwm xwindow
 modules-center =
-modules-right = date
+modules-right = btcprice ethprice uniprice date
 
 tray-position = none
 
@@ -113,18 +113,18 @@ pin-workspaces = true
 label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 1
 
 label-occupied = %name%
-label-occupied-padding = 2
+label-occupied-padding = 1
 
 label-urgent = %name%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 label-empty = %name%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 1
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -184,6 +184,21 @@ interval = 10
 type = custom/script
 exec = $HOME/.scripts/polybar/packageupdates
 label = "Updates: %output%"
+interval = 3600
+
+[module/btcprice]
+type = custom/script
+exec = $HOME/.scripts/polybar/polycoin
+interval = 3600
+
+[module/ethprice]
+type = custom/script
+exec = $HOME/.scripts/polybar/polycoin --token ETH
+interval = 3600
+
+[module/uniprice]
+type = custom/script
+exec = $HOME/.scripts/polybar/polycoin --token UNI
 interval = 3600
 
 
