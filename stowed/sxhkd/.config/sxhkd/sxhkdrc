@@ -26,6 +26,10 @@ super + shift + @space
 super + alt + @space
 	rofi -show window
 
+# rofi man search
+super + shift + m
+  rofiman
+
 # make sxhkd reload its configuration files:
 super + ctrl + r
 	pkill -USR1 -x sxhkd && notify-send 'sxhkd' 'Configuration reloaded.'
@@ -66,7 +70,7 @@ super + g
 # state/flags
 #
 
-# set the window state
+# set the node state
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
