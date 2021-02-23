@@ -10,7 +10,7 @@ $HOME/.scripts/polybar/launch.sh &
 
 $HOME/.scripts/bspwm/cleanfullscreen &
 
-picom &
+picom -b &
 
 nitrogen --restore &
 
