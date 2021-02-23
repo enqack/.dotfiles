@@ -8,7 +8,6 @@
 session=${2:-bspwm}
 
 case $session in
-  awesome       ) exec dbus-launch --sh-syntax --exit-with-session awesome;
   gnome         ) exec dbus-launch --sh-syntax --exit-with-session gnome-session;;
   bspwm         ) exec dbus-launch --sh-syntax --exit-with-session bspwm;;
   gnome-bswpwm  ) exec dbus-launch --sh-syntax --exit-with-session gnome-bspwm-session;;
