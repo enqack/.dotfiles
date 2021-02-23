@@ -1,3 +1,30 @@
+### ARCHIVE EXTRACTION
+# usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -15,6 +42,9 @@ alias la='ls -A'
 alias lt='ls -ltr'
 alias l='ls -CF'
 
+# termbin
+alias tb="nc termbin.com 9999"
+
 # compile kernel with max threads
 alias genker='sudo genkernel all --makeopts=-j$(nproc)'
 
@@ -22,4 +52,10 @@ alias genker='sudo genkernel all --makeopts=-j$(nproc)'
 alias emerge-sync='sudo layman --sync-all && sudo emerge --sync'
 # update @system and @world
 alias emerge-update='sudo emerge -auDNv --with-bdeps y @system @world'
+
+alias df='df -h'     # human-readable sizes
+alias free='free -m' # show sizes in MB
+
+# Merge Xresources
+alias xmerge='xrdb -merge ~/.Xresources.d/*'
 
