@@ -38,6 +38,7 @@ super + ctrl + r
 super + Escape
   $HOME/.scripts/bspwm/locker
 
+
 #
 # bspwm hotkeys
 #
@@ -66,6 +67,7 @@ super + y
 super + g
 	bspc node -s biggest
 
+
 #
 # state/flags
 #
@@ -77,6 +79,7 @@ super + {t,shift + t,s,f}
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
+
 
 #
 # focus/swap
@@ -124,6 +127,7 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+
 #
 # preselect
 #
@@ -144,6 +148,7 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
+
 #
 # move/resize
 #
@@ -159,6 +164,7 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
 
 #
 # applications
