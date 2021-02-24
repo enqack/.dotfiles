@@ -5,12 +5,12 @@
 # Executed by startx (run your window manager from here)
 
 # Here Bspwm is kept as default
-session=${2:-bspwm}
+session=${2:-gnome-bspwm}
 
 case $session in
   gnome         ) exec dbus-launch --sh-syntax --exit-with-session gnome-session;;
   bspwm         ) exec dbus-launch --sh-syntax --exit-with-session bspwm;;
-  gnome-bswpwm  ) exec dbus-launch --sh-syntax --exit-with-session gnome-bspwm-session;;
+  gnome-bspwm   ) exec dbus-launch --sh-syntax --exit-with-session gnome-session-bspwm;;
   i3|i3wm       ) exec dbus-launch --sh-syntax --exit-with-session i3;;
   qtile         ) exec dbus-launch --sh-syntax --exit-with-session qtile;;
   openbox       ) exec dbus-launch --sh-syntax --exit-with-session openbox-session;;
