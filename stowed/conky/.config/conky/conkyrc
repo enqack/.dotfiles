@@ -19,7 +19,7 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     extra_newline = false,
-    font = 'DejaVu Sans Mono:size=10',
+    font = 'DejaVuSansMono Nerd Font:size=10',
     gap_x = 10,
     gap_y = 45,
     maximum_width = 400,
@@ -46,7 +46,7 @@ conky.config = {
 }
 
 conky.text = [[
-${color1}${font DejaVuSansMono Nerd Font, Book:size=13}Host:${color3} $nodename
+${color1}${font DejaVuSansMono Nerd Font:size=13}Host:${color3} $nodename
 ${color1}Kernel:${color3} $kernel $machine${font}
 ${color2}$hr
 ${color1}Uptime:$color3 $uptime

@@ -1,17 +1,19 @@
-URxvt.depth:            32
+URxvt.depth:      32
 URxvt.background:	rgba:0000/0000/0000/c800
 URxvt.foreground:	#ffffff
-URxvt.font:		xft:DejaVu Sans mono:pixelsize=16:antialias=true:hinting=true
-URxvt.boldFont:		xft:DejaVu Sans mono:bold:pixelsize=16:antialias=true:hinting=true
-URxvt.scrollBar:	false
+URxvt.font:       xft:DejaVuSansMono Nerd Font::pixelsize=16:antialias=true:hinting=true
+URxvt.boldFont:		xft:DejaVuSansMono Nerd Font::bold:pixelsize=16:antialias=true:hinting=true
+URxvt.scrollBar:	False
 URxvt.saveLines:	65535
-URxvt.perl-ext-common: keyboard-select,url-select,clipboard
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-s: perl:keyboard-select:search
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.keysym.M-c:   perl:clipboard:copy
-URxvt.keysym.M-v:   perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.perl-ext-common: keyboard-select,matcher,font-size
+URxvt.url-launcher: google-chrome-stable
+URxvt.keysym.M-Escape: keyboard-select:activate
+URxvt.keysym.M-s: keyboard-select:search
+URxvt.keysym.M-u: url-select:select_next
+URxvt.keysym.M-c:   clipboard:copy
+URxvt.keysym.M-v:   clipboard:paste
+URxvt.keysym.M-C-v: clipboard:paste_escaped
+URxvt.keysym.C-equal: font-size:increase
 Xft*dpi:       96
 Xft*antialias: True
 Xft*hinting:   Full
