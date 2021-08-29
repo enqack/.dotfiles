@@ -6,9 +6,10 @@
 #
 
 
-# Enable colors and change prompt:
+# Enable colors
 autoload -U colors && colors
 export TERM="xterm-256color"
+#export TERM="linux"
 
 # Enable vcs_info
 autoload -Uz vcs_info
@@ -17,11 +18,45 @@ zstyle ':vcs_info:*' get-revision true
 zstyle ':vcs_info:*' stagedstr '!'
 zstyle ':vcs_info:*' unstagedstr '?'
 zstyle ':vcs_info:git*' formats "%B%{$fg[red]%}{ %{$fg[blue]%}%b%{$reset_color%} %m%u%c%{$fg[red]%}%B}"
-precmd() { vcs_info }
+
+function precmd {
+  vcs_info
+}
+
+function get_start_time() {
+  cmd_timer=$(date +%s%3N)
+}
+
+function calc_exec_time() {
+  if [ $cmd_timer ]; then
+    local now=$(date +%s%3N)
+    local d_ms=$(($now - $cmd_timer))
+    local d_s=$((d_ms / 1000))
+    local ms=$((d_ms % 1000))
+    local s=$((d_s % 60))
+    local m=$(((d_s / 60) % 60))
+    local h=$((d_s / 3600))
+
+    if ((h > 0)); then elapsed=${h}h${m}m
+    elif ((m > 0)); then elapsed=${m}m${s}s
+    elif ((s >= 10)); then elapsed=${s}.$((ms / 100))s
+    elif ((s > 0)); then elapsed=${s}.$((ms / 10))s
+    else elapsed=${ms}ms
+    fi
+
+    unset cmd_timer
+  else
+    elapsed=0
+  fi
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook preexec get_start_time
+add-zsh-hook precmd calc_exec_time
 
 setopt prompt_subst
 PROMPT='%B%{$fg[red]%}[%{$fg[green]%}%D %T%{$fg[red]%}][%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]${vcs_info_msg_0_}%b
-%{$fg[yellow]%}(rc: %?)%{$reset_color%}'
+%{$fg[yellow]%}(rc: %? et: ${elapsed} )%{$reset_color%}'
 
 if [[ $USER == 'root' ]]; then
     PROMPT="$PROMPT # "
@@ -32,7 +67,7 @@ fi
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.zsh_history
+HISTFILE=$XDG_DATA_HOME/zsh/history
 
 # Mail notification
 MAILCHECK=1

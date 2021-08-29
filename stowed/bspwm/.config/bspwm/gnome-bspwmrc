@@ -4,27 +4,29 @@
 #
 # autostart applications
 #
-sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
+xrandr --output DP-0 --primary --right-of DP-3
+
+gnome-flashback &
+
+gnome-keyring-daemon --start --components=pkcs11,secrets,ssh &
+
+sxhkd -c $HOME/.config/sxhkd/gnome-sxhkdrc &
 
 $HOME/.scripts/polybar/launch.sh &
 
 $HOME/.scripts/bspwm/cleanfullscreen &
 
-$HOME/.scripts/bspwm/edge_switcher &
-
 picom -b &
-
-nitrogen --restore &
 
 dunst &
 
 xrdb -merge $HOME/.Xresources
 xrdb -merge $HOME/.Xresources.d/*
 
-killall xautolock
-$HOME/.scripts/bspwm/autolocker &
+#killall xautolock
+#$HOME/.scripts/bspwm/autolocker &
 
-pipewire &
+#pipewire &
 
 killall -9 conky
 /usr/bin/conky -q -c ~/.config/conky/conkyrc &
@@ -41,7 +43,7 @@ killall barrier
 barrier &
 
 killall pcmanfm-qt
-pcmanfm-qt --dekstop-off &
+pcmanfm-qt --desktop-off &
 
 xsetroot -cursor_name left_ptr
 
@@ -65,7 +67,7 @@ bspc config pointer_action1       move
 bspc config pointer_action2       resize_side
 bspc config pointer_action3       resize_corner
 
-bspc config split_ratio           0.52
+bspc config split_ratio           0.5
 bspc config borderless_monocle    true
 bspc config gapless_monocle       true
 bspc config focus_follows_pointer false
@@ -83,5 +85,3 @@ bspc rule -a Gnome-tweaks state=floating center=true
 bspc rule -a Google-chrome desktop=^1 follow=true
 bspc rule -a Gimp-2.8 state=floating
 bspc rule -a Blueman-manager state=floating
-
-

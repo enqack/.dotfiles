@@ -7,6 +7,15 @@
 # Here Bspwm is kept as default
 session=${2:-gnome-bspwm}
 
+#if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+#       eval `dbus-launch --sh-syntax --exit-with-session`
+#fi
+
+#-- ensure XDG_Runtime_dir is set
+mkdir /run/user/$(id -u)
+unset XDG_RUNTIME_DIR
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
+
 case $session in
   gnome         ) exec dbus-launch --sh-syntax --exit-with-session gnome-session;;
   bspwm         ) exec dbus-launch --sh-syntax --exit-with-session bspwm;;

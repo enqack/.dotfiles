@@ -48,8 +48,8 @@ alias tb="nc termbin.com 9999"
 # compile kernel with max threads
 alias genker='sudo genkernel all --makeopts=-j$(nproc)'
 
-# sync emerge and layman
-alias emerge-sync='sudo layman --sync-all && sudo emerge --sync'
+# sync portage repositories
+alias emerge-sync='sudo emaint sync --auto'
 # update @system and @world
 alias emerge-update='sudo emerge -auDNv --with-bdeps y @system @world'
 

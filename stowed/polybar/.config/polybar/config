@@ -45,7 +45,7 @@ module-margin-right = 1
 
 modules-left = bspwm xwindow
 modules-center =
-modules-right = packageupdates cpu-usage memory filesystem date
+modules-right = packageupdates packageupdates-sec cpu-usage memory filesystem date
 
 tray-position = right
 tray-padding = 2
@@ -83,7 +83,7 @@ module-margin-right = 1
 
 modules-left = bspwm xwindow
 modules-center =
-modules-right = btcprice ethprice uniprice date
+modules-right = btcprice ethprice uniprice
 
 tray-position = none
 
@@ -160,7 +160,7 @@ label = %percentage_used:2%%
 type = internal/date
 interval = 5
 date =
-date-alt = " %Y-%m-%d"
+date-alt = "%a %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 label = %date% %time%
@@ -171,7 +171,7 @@ exec = $HOME/.scripts/polybar/polycpu
 label = "CPU: %output%"
 click-left = $TERMINAL -e htop &
 interval = 5
-format-prefix = "💻 "
+;format-prefix = "💻 "
 
 [module/cpu-temperature]
 type = custom/script
@@ -186,19 +186,28 @@ exec = $HOME/.scripts/polybar/packageupdates
 label = "Updates: %output%"
 interval = 3600
 
+[module/packageupdates-sec]
+type = custom/script
+exec = $HOME/.scripts/polybar/packageupdates-sec
+label = "Security Updates: %output%"
+interval = 3600
+
 [module/btcprice]
 type = custom/script
 exec = $HOME/.scripts/polybar/polycoin
+click-left = urxvt -hold -e curl rate.sx/BTC &
 interval = 3600
 
 [module/ethprice]
 type = custom/script
 exec = $HOME/.scripts/polybar/polycoin --token ETH
+click-left = urxvt -hold -e curl rate.sx/ETH &
 interval = 3600
 
 [module/uniprice]
 type = custom/script
 exec = $HOME/.scripts/polybar/polycoin --token UNI
+click-left = urxvt -hold -e curl rate.sx/UNI &
 interval = 3600
 
 

@@ -42,6 +42,22 @@ super + Escape
 super + ctrl + p
   {pkill picom, picom -b}
 
+#
+# gnome-flashback
+#
+
+# logout of session
+super + shift + e
+  /usr/bin/gnome-session-quit --logout
+
+# reboot computer
+super + shift + b
+  /usr/bin/gnome-session-quit --reboot
+
+# power off computer
+super + shift + p
+  /usr/bin/gnome-session-quit --power-off
+
 
 #
 # bspwm hotkeys
