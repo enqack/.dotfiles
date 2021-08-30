@@ -26,12 +26,14 @@
 }
 
 window {
+  height: 100%;
+  width: 100%;
   transparency: "real";
-  background-color: #1b1b1bee;
+  background-color: #1b1b1bdd;
 }
 
 mainbox {
-  padding: 30% 30%;
+  padding: 20% 33%;
 }
 
 inputbar {
@@ -68,6 +70,9 @@ element {
 
 element selected {
   background-color: @blue;
+}
+
+element-text selected {
   text-color: @black;
 }
 
@@ -91,4 +96,5 @@ button selected {
   padding: 5px;
   border-radius: 3px;
   background-color: @base02;
+  text-color: @black;
 }
