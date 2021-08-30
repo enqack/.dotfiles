@@ -8,8 +8,7 @@
 
 # Enable colors
 autoload -U colors && colors
-export TERM="xterm-256color"
-#export TERM="linux"
+export TERM="xterm-color"
 
 # Enable vcs_info
 autoload -Uz vcs_info
@@ -64,7 +63,7 @@ else
     PROMPT="$PROMPT $ "
 fi
 
-# History in cache directory:
+# History in cache directory
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=$XDG_DATA_HOME/zsh/history
@@ -74,18 +73,18 @@ MAILCHECK=1
 MAILPATH=$HOME/.maildir
 autoload checkmail
 
-# Basic auto/tab complete:
+# Basic auto/tab complete
 autoload -U compinit
-zstyle ':completion:*' menu select
+zstyle ':completion:*' menu select cache-path ${XDG_CACHE_HOME}/zsh/zcompcache
 zmodload zsh/complist
-compinit
+compinit -d ${XDG_CACHE_HOME}/zsh/zcompdump
 _comp_options+=(globdots)               # Include hidden files.
 
 # vi mode
 bindkey -v
 export KEYTIMEOUT=5
 
-# Use vim keys in tab complete menu:
+# Use vim keys in tab complete menu
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
@@ -96,7 +95,7 @@ bindkey -v '^?' backward-delete-char
 bindkey "^[[7~" beginning-of-line
 bindkey "^[[8~" end-of-line
 
-# Change cursor shape for different vi modes.
+# Change cursor shape for different vi modes
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
      [[ $1 = 'block' ]]; then
@@ -132,18 +131,18 @@ rangercd () {
 }
 bindkey -s '^o' 'rangercd\n'
 
-# Edit line in vim with ctrl-e:
+# Edit line in vim with ctrl-e
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-# Load aliases and shortcuts if existent.
+# Load aliases and shortcuts if existent
 [ -f "$HOME/.config/zsh/shortcutrc" ] && source "$HOME/.config/zsh/shortcutrc"
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
 
 # Load zsh-syntax-highlighting settings
 [ -f "$HOME/.config/zsh/highlightingrc" ] && source "$HOME/.config/zsh/highlightingrc"
 
-# Load and configure powerlevel9k theme
-#[ -f "$HOME/.config/zsh/powerlevelrc" ] && source "$HOME/.config/zsh/powerlevelrc"
-#[ -f "/usr/share/powerlevel9k/powerlevel9k.zsh-theme" ] && source "/usr/share/powerlevel9k/powerlevel9k.zsh-theme"
+# Load zsh-autosuggestions if existent
+[ -f "/usr/share/zsh/site-functions/zsh-autosuggestions.zsh" ] && source "/usr/share/zsh/site-functions/zsh-autosuggestions.zsh"
+
 
