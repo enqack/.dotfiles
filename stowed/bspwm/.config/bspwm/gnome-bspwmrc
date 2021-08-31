@@ -1,9 +1,10 @@
-#! /bin/sh
-
+#!/bin/sh
+bspc rule -r "*"
 
 #
 # autostart applications
 #
+
 xrandr --output DP-0 --primary --right-of DP-3
 
 gnome-flashback &
@@ -29,7 +30,7 @@ xrdb -merge $HOME/.Xresources.d/*
 #pipewire &
 
 killall -9 conky
-/usr/bin/conky -q -c ~/.config/conky/conkyrc &
+/usr/bin/conky -q -c $HOME/.config/conky/conkyrc &
 
 blueman-applet &
 
@@ -47,9 +48,8 @@ pcmanfm-qt --desktop-off &
 
 xsetroot -cursor_name left_ptr
 
-
 #
-# bspc configuration
+# bspwm configuration
 #
 
 # primary
@@ -73,6 +73,9 @@ bspc config gapless_monocle       true
 bspc config focus_follows_pointer false
 bspc config click_to_focus        button1
 
+#
+# bspwm rules
+#
 
 bspc rule -a URxvt:urxvt_keys_help state=floating
 

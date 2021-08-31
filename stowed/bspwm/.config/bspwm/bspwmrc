@@ -1,9 +1,12 @@
-#! /bin/sh
-
+#!/bin/sh
+bspc rule -r "*"
 
 #
 # autostart applications
 #
+
+xrandr --output DP-0 --primary --right-of DP-3
+
 sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
 
 $HOME/.scripts/polybar/launch.sh &
@@ -21,13 +24,16 @@ dunst &
 xrdb -merge $HOME/.Xresources
 xrdb -merge $HOME/.Xresources.d/*
 
+killall urxvtd
+urxvtd -q &
+
 killall xautolock
 $HOME/.scripts/bspwm/autolocker &
 
 pipewire &
 
 killall -9 conky
-/usr/bin/conky -q -c ~/.config/conky/conkyrc &
+/usr/bin/conky -q -c $HOME/.config/conky/conkyrc &
 
 blueman-applet &
 
@@ -45,9 +51,8 @@ pcmanfm-qt --dekstop-off &
 
 xsetroot -cursor_name left_ptr
 
-
 #
-# bspc configuration
+# bspwm configuration
 #
 
 # primary
@@ -71,17 +76,19 @@ bspc config gapless_monocle       true
 bspc config focus_follows_pointer false
 bspc config click_to_focus        button1
 
+#
+# bspwm rules
+#
 
 bspc rule -a URxvt:urxvt_keys_help state=floating
 
+bspc rule -a Blueman-manager state=floating
 bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Screenkey manage=off
-bspc rule -a Lxappearance state=floating center=true
-bspc rule -a Terminator:Preferences state=floating
+bspc rule -a Gimp-2.8 state=floating
+bspc rule -a Gnome-calendar state=floating center=true
 bspc rule -a Gnome-tweaks state=floating center=true
 bspc rule -a Google-chrome desktop=^1 follow=true
-bspc rule -a Gimp-2.8 state=floating
-bspc rule -a Blueman-manager state=floating
-
-
+bspc rule -a mplayer2 state=floating
+bspc rule -a Lxappearance state=floating center=true
+bspc rule -a Screenkey manage=off
+bspc rule -a Terminator:Preferences state=floating
