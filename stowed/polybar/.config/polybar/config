@@ -195,19 +195,19 @@ interval = 3600
 [module/btcprice]
 type = custom/script
 exec = $HOME/.scripts/polybar/polycoin
-click-left = urxvt -hold -e curl rate.sx/BTC &
+click-left = $TERMINAL -hold -e curl rate.sx/BTC &
 interval = 3600
 
 [module/ethprice]
 type = custom/script
 exec = $HOME/.scripts/polybar/polycoin --token ETH
-click-left = urxvt -hold -e curl rate.sx/ETH &
+click-left = $TERMINAL -hold -e curl rate.sx/ETH &
 interval = 3600
 
 [module/uniprice]
 type = custom/script
 exec = $HOME/.scripts/polybar/polycoin --token UNI
-click-left = urxvt -hold -e curl rate.sx/UNI &
+click-left = $TERMINAL -hold -e curl rate.sx/UNI &
 interval = 3600
 
 
