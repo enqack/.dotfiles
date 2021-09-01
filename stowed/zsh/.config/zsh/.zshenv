@@ -2,16 +2,19 @@ typeset -U PATH path
 
 export PATH="${PATH}:${HOME}/.scripts"
 
-# set GOPATH
-export GOPATH="${HOME}/Projects/go"
+#
+# XDG paths
+#
 
-# Other XDG paths
 export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 
+#
 # Fixing paths
+#
+
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 export GEM_PATH="${XDG_DATA_HOME}/ruby/gems"
 export GEM_SPEC_CACHE="${XDG_DATA_HOME}/ruby/specs"
@@ -35,11 +38,14 @@ export XINITRC="${XDG_CONFIG_HOME}/X11/xinitrc"
 export XSERVERRC="${XDG_CONFIG_HOME}/X11/xserverrc"
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
+#
 # Default apps not set by eselect or /etc/env.d/
-export READER="zathura"
-export BROWSER="google-chrome-stable"
-export VIDEO="mpv"
-export IMAGE="feh"
+#
+
+# export READER="zathura"
+# export BROWSER="google-chrome-stable"
+# export VIDEO="mpv"
+# export IMAGE="feh"
 export COLORTERM="truecolor"
 export OPENER="xdg-open"
 export WM="bspwm"
