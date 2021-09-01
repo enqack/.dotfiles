@@ -45,7 +45,7 @@ module-margin-right = 1
 
 modules-left = bspwm xwindow
 modules-center =
-modules-right = packageupdates packageupdates-sec cpu-usage memory filesystem date
+modules-right = packageupdates packageupdates-sec systemd-degraded cpu-usage memory filesystem date
 
 tray-position = right
 tray-padding = 2
@@ -191,6 +191,12 @@ type = custom/script
 exec = $HOME/.scripts/polybar/packageupdates-sec
 label = "Security Updates: %output%"
 interval = 3600
+
+[module/systemd-degraded]
+type = custom/script
+exec = $HOME/.scripts/polybar/systemd-degraded
+label = "Failed Units: %output%"
+interval = 60
 
 [module/btcprice]
 type = custom/script
