@@ -54,8 +54,10 @@ alias emerge-sync='sudo emaint sync --auto'
 alias emerge-update='sudo emerge -auDNv --with-bdeps y @system @world'
 
 alias df='df -h'     # human-readable sizes
-alias free='free -m' # show sizes in MB
+alias free='free -h' # human-readable sizes
 
 # Merge Xresources
 alias xmerge='xrdb -merge ~/.Xresources.d/*'
 
+# Send notification of last failure in log journal
+alias lastfail='notify-send --urgency=low "Last failure:" "$(journalctl --no-pager -e | grep failed | tail -n1)"'
