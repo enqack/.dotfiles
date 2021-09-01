@@ -1,18 +1,11 @@
 #!/bin/sh
 #
-# ~/.xinitrc
+# ~/.config/X11/xinitrc
 #
 # Executed by startx (run your window manager from here)
 
-# Here Bspwm is kept as default
-session=${2:-"bspwm"}
-
-#-- ensure XDG_Runtime_dir is set
-if [ ! -d /run/user/$(id -u) ]; then
-  mkdir /run/user/$(id -u)
-fi
-unset XDG_RUNTIME_DIR
-export XDG_RUNTIME_DIR=/run/user/$(id -u)
+# Set default to gnome if WM env var is unset
+session=${2:-"${WM:-gnome}"}
 
 case $session in
   gnome         ) exec dbus-launch --sh-syntax --exit-with-session gnome-session;;
