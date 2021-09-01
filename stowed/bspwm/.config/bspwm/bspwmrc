@@ -84,8 +84,10 @@ bspc rule -a URxvt:urxvt_keys_help state=floating
 
 bspc rule -a Blueman-manager state=floating
 bspc rule -a Chromium desktop='^2'
+bspc rule -a feh state=fullscreen
 bspc rule -a Gimp-2.8 state=floating
 bspc rule -a Gnome-calendar state=floating center=true
+bspc rule -a Gnome-control-center state=floating center=true
 bspc rule -a Gnome-tweaks state=floating center=true
 bspc rule -a Google-chrome desktop=^1 follow=true
 bspc rule -a mplayer2 state=floating
