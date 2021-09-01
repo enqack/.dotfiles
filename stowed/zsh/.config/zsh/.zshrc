@@ -145,4 +145,6 @@ bindkey '^e' edit-command-line
 # Load zsh-autosuggestions if existent
 [ -f "/usr/share/zsh/site-functions/zsh-autosuggestions.zsh" ] && source "/usr/share/zsh/site-functions/zsh-autosuggestions.zsh"
 
+# Load zsh-autosuggestions settings
+[ -f "$HOME/.config/zsh/autosuggestionsrc" ] && source "$HOME/.config/zsh/autosuggestionsrc"
 
