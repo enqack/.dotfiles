@@ -5,3 +5,5 @@
 # Please adapt and uncomment the following lines:
 	name = enqack
 	email = enqack@gmail.com
+[init]
+	defaultBranch = master
