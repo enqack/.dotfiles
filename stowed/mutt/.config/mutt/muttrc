@@ -1,0 +1,17 @@
+set mbox_type=Maildir
+set folder=~/.maildir
+set spoolfile=~/.maildir/
+set record=~/.maildir-sent/
+set move=no
+
+set index_format="%4C %Z %{%b %d} %-16.16L  %s"
+
+# mandatory attachments settings, not setting these is a BUG!
+# see https://marc.info/?l=mutt-dev&m=158347284923517&w=2
+attachments   +A */.*
+attachments   -A text/x-vcard application/pgp.*
+attachments   -A application/x-pkcs7-.*
+attachments   +I text/plain
+attachments   -A message/external-body
+attachments   -I message/external-body
+
