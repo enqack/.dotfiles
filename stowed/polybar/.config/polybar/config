@@ -184,6 +184,7 @@ interval = 10
 type = custom/script
 exec = $HOME/.scripts/polybar/packageupdates
 label = "Updates: %output%"
+click-left = $HOME/.scripts/polybar/packageupdates open
 interval = 3600
 
 [module/packageupdates-sec]
@@ -196,6 +197,7 @@ interval = 3600
 type = custom/script
 exec = $HOME/.scripts/polybar/systemd-degraded
 label = "Failed Units: %output%"
+click-left = $HOME/.scripts/polybar/systemd-degraded open
 interval = 60
 
 [module/btcprice]
