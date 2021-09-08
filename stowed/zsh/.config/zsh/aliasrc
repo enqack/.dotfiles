@@ -61,3 +61,10 @@ alias xmerge='xrdb -merge ~/.Xresources.d/*'
 
 # Send notification of last failure in log journal
 alias lastfail='notify-send --urgency=low "Last failure:" "$(journalctl --no-pager -e | grep failed | tail -n1)"'
+
+# color gcc
+alias gcc='/usr/lib/colorgcc/bin/gcc'
+alias g++='/usr/lib/colorgcc/bin/g++'
+alias cc='/usr/lib/colorgcc/bin/cc'
+alias c++='/usr/lib/colorgcc/bin/c++'
+alias x86_64-pc-linux-gnu-gcc='/usr/lib/colorgcc/bin/x86_64-pc-linux-gnu-gcc'

@@ -1,6 +1,8 @@
 typeset -U PATH path
 
-export PATH="${PATH}:${HOME}/.scripts"
+export PATH="/usr/lib/colorgcc/bin:${PATH}:${HOME}/.scripts:${HOME}/.scripts/rofi"
+
+export GOPATH="${HOME}/Projects/go"
 
 #
 # XDG paths
@@ -49,3 +51,6 @@ export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 export COLORTERM="truecolor"
 export OPENER="xdg-open"
 export WM="bspwm"
+
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
