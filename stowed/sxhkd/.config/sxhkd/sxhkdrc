@@ -4,15 +4,15 @@
 
 # show help on key bindings
 super + F1
-	urxvt -geometry 100X30 -name urxvt_keys_help -e $HOME/.scripts/sxhkd/show_help.sh
+	urxvt -geometry 100X30 -name sxhkd_key_bindings -e $HOME/.scripts/sxhkd/show_help.sh
 
 # launch terminal emulator
 super + Return
-	urxvt
+	$TERMINAL
 
 # launch browser
 super + shift + Return
-  google-chrome-stable
+  $BROWSER
 
 # rofi desktop launcher
 super + @space
@@ -27,8 +27,12 @@ super + alt + @space
 	rofi -show window
 
 # rofi man search
-super + shift + m
-  rofiman
+super + r ; m
+  $HOME/.scripts/rofi/rofiman
+
+# rofi tmux session selector
+super + r ; t
+  $HOME/.scripts/rofi/rofi-tmux-session
 
 # make sxhkd reload its configuration files:
 super + ctrl + r
@@ -76,11 +80,11 @@ super + g
 # state/flags
 #
 
-# set the node state
+# set the node state (tiled,pseudo_tiled,floating,fullscreen)
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-# set the node flags
+# set the node flags (marked,locked,sticky,private)
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
@@ -169,10 +173,35 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+#
+# media controls
+#
+
+# play song
+super + a ; p
+  playerctl play-pause || mpc toggle
+
+# stop song
+super + a ; s
+  playerctl stop || mpc stop
+
+# next song
+super + a ; n
+  playerctl next || mpc next
+
+# previous song
+super + a ; b
+  playerctl previous || mpc prev
+
+# show song infomation
+super + slash
+  songnotification
 
 #
 # applications
 #
+
+# Gnome sound settings
 super + ctrl + s
   gnome-control-center sound
 
