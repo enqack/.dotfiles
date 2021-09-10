@@ -8,7 +8,7 @@
 
 # Enable colors
 autoload -U colors && colors
-export TERM="xterm-color"
+export TERM="xterm-256color"
 
 # Enable vcs_info
 autoload -Uz vcs_info
@@ -120,16 +120,16 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Use lf to switch directories and bind it to ctrl-o
-rangercd () {
+lfcd () {
     tmp="$(mktemp)"
-    ranger --choosedir="$tmp" "$@"
+    lf "$@"
     if [ -f "$tmp" ]; then
         dir="$(cat "$tmp")"
         rm -f "$tmp"
         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
 }
-bindkey -s '^o' 'rangercd\n'
+bindkey -s '^o' 'lfcd\n'
 
 # Edit line in vim with ctrl-e
 autoload edit-command-line; zle -N edit-command-line
