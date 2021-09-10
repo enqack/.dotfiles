@@ -22,7 +22,6 @@ nitrogen --restore &
 dunst &
 
 xrdb -merge $HOME/.Xresources
-xrdb -merge $HOME/.Xresources.d/*
 
 killall urxvtd
 urxvtd -q &
@@ -88,9 +87,9 @@ bspc config focused_border_color "#aaaaaa"
 # bspwm rules
 #
 
-bspc rule -a URxvt:rofiman state=floating
-bspc rule -a URxvt:sxhkd_key_bindings state=floating
-bspc rule -a URxvt:polybar-float state=floating
+bspc rule -a *:*:rofiman state=floating
+bspc rule -a *:*:sxhkd_key_bindings state=floating
+bspc rule -a *:*:polybar-float state=floating
 
 bspc rule -a Blueman-manager state=floating
 bspc rule -a Chromium desktop='^2'

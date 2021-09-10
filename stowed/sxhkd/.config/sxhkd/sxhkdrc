@@ -4,7 +4,11 @@
 
 # show help on key bindings
 super + F1
-	urxvt -geometry 100X30 -name sxhkd_key_bindings -e $HOME/.scripts/sxhkd/show_help.sh
+	$TERMINAL --title sxhkd_key_bindings -e $HOME/.scripts/sxhkd/show_help.sh
+
+# launch file manager
+super + ctrl + Return
+  $TERMINAL -e lf
 
 # launch terminal emulator
 super + Return
