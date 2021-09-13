@@ -64,12 +64,12 @@ bspc config bottom_padding        0
 bspc config border_width          2
 bspc config window_gap            5
 
-bspc config pointer_modifier      lock
+bspc config pointer_modifier      mod4
 bspc config pointer_action1       move
 bspc config pointer_action2       resize_side
 bspc config pointer_action3       resize_corner
 
-bspc config split_ratio           0.52
+bspc config split_ratio           0.50
 bspc config borderless_monocle    true
 bspc config gapless_monocle       true
 bspc config focus_follows_pointer false
@@ -92,13 +92,14 @@ bspc rule -a *:*:sxhkd_key_bindings state=floating
 bspc rule -a *:*:polybar-float state=floating
 
 bspc rule -a Blueman-manager state=floating
-bspc rule -a Chromium desktop='^2'
-bspc rule -a feh state=fullscreen
+bspc rule -a Chromium follow=true
+bspc rule -a feh state=floating
+bspc rule -a Sxiv state=floating
 bspc rule -a Gimp-2.8 state=floating
 bspc rule -a Gnome-calendar state=floating center=true
 bspc rule -a Gnome-control-center state=floating center=true
 bspc rule -a Gnome-tweaks state=floating center=true
-bspc rule -a Google-chrome desktop=^1 follow=true
+bspc rule -a Google-chrome follow=true
 bspc rule -a mplayer2 state=floating
 bspc rule -a Lxappearance state=floating center=true
 bspc rule -a Screenkey manage=off
