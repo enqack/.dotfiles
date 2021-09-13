@@ -76,6 +76,8 @@ map gh cd ~
 map gc. cd ~/.config
 map gbsp $$EDITOR ~/.config/bspwm/bspwmrc
 map gsxk $$EDITOR ~/.config/sxhkd/sxhkdrc
+map gslf $$EDITOR ~/.config/lf/lfrc
+
 map gs. cd ~/.scripts
 
 map gd cd ~/Documents
@@ -86,6 +88,8 @@ map gp cd ~/Pictures
 map gps cd ~/Pictures/screenshots
 
 map gv cd ~/Videos
+
+map gmnt cd /mnt
 
 
 # define a custom 'open' command
