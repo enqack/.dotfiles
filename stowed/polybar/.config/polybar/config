@@ -83,7 +83,7 @@ module-margin-right = 1
 
 modules-left = bspwm xwindow
 modules-center =
-modules-right = btcprice ethprice uniprice
+modules-right = torrents btcprice ethprice uniprice
 
 tray-position = none
 
@@ -200,6 +200,14 @@ label = "Failed Units: %output%"
 click-left = $HOME/.scripts/polybar/systemd-degraded open
 interval = 60
 
+[module/torrents]
+type = custom/script
+#exec = echo 📥
+exec = $HOME/.scripts/polybar/torrent-count
+click-left = $TERMINAL -e tremc &
+click-right = notifytorrents
+interal = 60
+
 [module/btcprice]
 type = custom/script
 exec = $HOME/.scripts/polybar/polycoin
@@ -219,4 +227,4 @@ click-left = $TERMINAL -hold -e curl rate.sx/UNI &
 interval = 3600
 
 
-; vim:ft=dosini
+; vim: ft=dosini
