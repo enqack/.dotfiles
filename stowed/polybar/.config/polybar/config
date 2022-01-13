@@ -164,6 +164,7 @@ date-alt = "%a %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 label = %date% %time%
+format = %{A2:$TERMINAL --title polybar-float -e calcurse:}<label>%{A}
 
 [module/cpu-usage]
 type = custom/script
