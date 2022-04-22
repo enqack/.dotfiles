@@ -5,14 +5,17 @@
 # Executed by startx (run your window manager from here)
 
 # Set default to gnome if WM env var is unset
-session=${2:-"${WM:-gnome}"}
+session=${1:-"${WM:-gnome}"}
+# set launch command
+launcher="exec dbus-launch --sh-syntax --exit-with-session"
 
 case $session in
-  gnome         ) exec dbus-launch --sh-syntax --exit-with-session gnome-session;;
-  bspwm         ) exec dbus-launch --sh-syntax --exit-with-session bspwm;;
-  gnome-bspwm   ) exec dbus-launch --sh-syntax --exit-with-session gnome-session-bspwm;;
-  qtile         ) exec dbus-launch --sh-syntax --exit-with-session qtile;;
-  openbox       ) exec dbus-launch --sh-syntax --exit-with-session openbox-session;;
+  gnome         ) $(launcher) gnome-session;;
+  kde           ) $(launcher) startplasma-x11;;
+  bspwm         ) $(launcher) bspwm;;
+  gnome-bspwm   ) $(launcher) gnome-session-bspwm;;
+  qtile         ) $(launcher) qtile;;
+  openbox       ) $(launcher) openbox-session;;
   # No known session, try to run it as command
-  *             ) exec dbus-launch --sh-syntax --exit-with-session $session;;
+  *             ) $(launcher) $session;;
 esac
