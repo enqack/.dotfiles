@@ -1,0 +1,109 @@
+/*
+ * ROFI BSPWM Theme
+ *
+ */
+
+
+* {
+  base03:     #002b36;
+  base03t:    #002b36dd;
+  base02:     #073642;
+  base01:     #586e75;
+  base0:      #839496;
+  base1:      #93a1a1;
+  yellow:     #b58900;
+  red:	      #dc322f;
+  blue:       #224c88;
+  cyan:       #2aa198;
+  black:      #000000;
+  blackt:     #000000aa;
+
+  spacing: 0;
+  background-color: transparent;
+
+  text-color: @base0;
+}
+
+window {
+  location: center;
+  width: 75%;
+  transparency: "real";
+  background-color: @black;
+  border: 2px;
+  border-color: #aaaaaa;
+}
+
+mainbox {
+  padding: 10px 15%;
+}
+
+inputbar {
+  margin: 0px 0px 20px 0px;
+  children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+prompt {
+  text-color: @base1;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: ":";
+  text-color: @base1;
+}
+
+entry {
+  margin: 0px 10px;
+}
+
+listview {
+  spacing: 5px;
+  dynamic: true;
+  scrollbar: false;
+}
+
+element {
+  padding: 5px;
+  text-color: @base1;
+  highlight: @yellow;
+}
+
+element selected {
+  border: 2px;
+  border-color: @base1;
+}
+
+element-icon {
+  size: 0.8em;
+  margin: 0px 10px;
+}
+
+element-text selected {
+  text-color: @white;
+}
+
+element urgent, element selected urgent {
+  text-color: @red;
+}
+
+element active, element selected active {
+  text-color: @yellow;
+}
+
+message {
+  padding: 5px;
+  background-color: @base02;
+  border: 1px;
+  border-color: @cyan;
+}
+
+message textbox {
+  border: 1px;
+  border-color: @yellow;
+}
+
+button selected {
+  padding: 5px;
+  background-color: @base02;
+  text-color: @black;
+}

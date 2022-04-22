@@ -9,5 +9,9 @@ configuration {
   }
 }
 
-@theme "cubecomp-theme"
+//@theme "bspwm-theme"
 
+//@theme "/usr/share/rofi/themes/android_notification.rasi"
+//@theme "/home/sysop/.config/rofi/themes/bspwm-theme.rasi"
+//@theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"
+@theme "/home/sysop/.config/rofi/themes/bspwm-theme.rasi"
