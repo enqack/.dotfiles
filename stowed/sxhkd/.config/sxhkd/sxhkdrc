@@ -40,7 +40,7 @@ super + r ; t
 
 # make sxhkd reload its configuration files:
 super + ctrl + r
-	pkill -USR1 -x sxhkd && notify-send 'sxhkd' 'Configuration reloaded.'
+	pkill -USR1 -x sxhkd && notify-send 'SXHKD' 'Configuration reloaded.'
 
 # lock screen
 super + Escape
@@ -48,7 +48,7 @@ super + Escape
 
 # toggle compositing
 super + ctrl + p
-  {pkill picom, picom -b}
+  {pkill picom && notify-send 'Picom' 'Compositor was stopped.', picom -b && notify-send 'Picom' 'Compositor was started.'}
 
 
 #
@@ -57,11 +57,11 @@ super + ctrl + p
 
 # restart bspwm
 super + alt + r
-	bspc wm --restart && notify-send 'bspwm' 'Configuration reloaded.'
+	bspc wm --restart && notify-send 'BSPWM' 'Configuration reloaded.'
 
 # quit bspwm
 super + alt + q
-	prompt "Are you sure you would like to quit bpswm?" "bspc quit"
+	prompt "Are you sure you would like to quit BSPWM?" "bspc quit"
 
 # close and kill
 super + {_,shift + }w
