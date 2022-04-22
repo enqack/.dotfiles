@@ -1,8 +1,11 @@
 typeset -U PATH path
 
-export PATH="/usr/lib/colorgcc/bin:${PATH}:${HOME}/.scripts:${HOME}/.scripts/rofi"
 
 export GOPATH="${HOME}/Projects/go"
+
+export CCACHE_DIR="/var/cache/ccache"
+
+export PATH="/usr/lib/colorgcc/bin:/usr/lib/ccache/bin:${PATH}:${GOPATH}/bin:${HOME}/.local/bin:${HOME}/.scripts:${HOME}/.scripts/rofi"
 
 #
 # XDG paths
@@ -56,3 +59,6 @@ export WM="bspwm"
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# portage and related tools
+export EIX_LIMIT=0
+export EIX_LIMIT_COMPACT=0

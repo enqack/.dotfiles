@@ -48,13 +48,20 @@ alias tb="nc termbin.com 9999"
 # compile kernel with max threads
 alias genker='sudo genkernel all --makeopts=-j$(nproc)'
 
+# update grub config
+alias gengrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
 # sync portage repositories
 alias emerge-sync='sudo emaint sync --auto'
 # update @system and @world
-alias emerge-update='sudo emerge -auDNv --with-bdeps y @system @world'
+alias emerge-update='sudo emerge -auDNv --with-bdeps y @world'
 
-alias df='df -h'     # human-readable sizes
-alias free='free -h' # human-readable sizes
+# human-readable sizes
+alias df='df -h'
+alias free='free -h'
+
+# LF
+alias lf='lfrun'
 
 # Merge Xresources
 alias xmerge='xrdb -merge ~/.Xresources.d/*'
