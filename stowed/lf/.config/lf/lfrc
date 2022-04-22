@@ -3,7 +3,9 @@ set shell zsh
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 10
-#set previewer "${HOME}/.scripts/lf/preview"
+set ratios 1:2:3
+set previewer ~/.scripts/lf/preview
+set cleaner ~/.scripts/lf/cleaner
 set drawbox true
 set hidden true
 set icons true
