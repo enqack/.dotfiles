@@ -19,7 +19,7 @@ if !has('nvim') | set viminfofile=$XDG_CACHE_HOME/vim/viminfo | endif
 let mapleader=" "
 
 " Basic settings
-set term=color_xterm
+set term=xterm-256color
 set encoding=utf-8
 set mouse=a
 syntax on
