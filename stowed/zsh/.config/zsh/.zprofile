@@ -1,5 +1,5 @@
 #!/bin/sh
 
-if [[ "$(tty)" == "/dev/tty1" ]]; then
-  pgrep X || sxa
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec sxa
 fi
