@@ -95,6 +95,10 @@ bindkey -v '^?' backward-delete-char
 bindkey "^[[7~" beginning-of-line
 bindkey "^[[8~" end-of-line
 
+# Move back and forth one word
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
 # Change cursor shape for different vi modes
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
