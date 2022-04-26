@@ -6,10 +6,10 @@ set scrolloff 10
 set ratios 1:2:3
 set previewer ~/.scripts/lf/preview
 set cleaner ~/.scripts/lf/cleaner
-set drawbox true
-set hidden true
-set icons true
-set ignorecase true
+set drawbox
+set hidden
+set ignorecase
+set dircounts
 
 # use enter for shell commands
 # map <enter> shell
