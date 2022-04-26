@@ -17,7 +17,7 @@ $HOME/.scripts/bspwm/edge_switcher &
 
 picom -b &
 
-nitrogen --restore &
+$HOME/.scripts/random-bg $HOME/Pictures/rotated-bg
 
 dunst &
 
@@ -48,7 +48,18 @@ barrier &
 killall pcmanfm-qt
 pcmanfm-qt --dekstop-off &
 
-xsetroot -cursor_name left_ptr
+xsetroot -cursor_name left_ptr &
+
+# font config
+xset +fp /usr/share/fonts &
+xset +fp ~/.fonts &
+xset fp rehash &
+fc-cache -fv &
+
+# screensaver options
+xset s off &
+xset s noblank &
+xset s noexpose &
 
 #
 # bspwm configuration
@@ -69,9 +80,12 @@ bspc config pointer_action1       move
 bspc config pointer_action2       resize_side
 bspc config pointer_action3       resize_corner
 
+bspc config automatic_scheme      alternate
 bspc config split_ratio           0.50
+
 bspc config borderless_monocle    true
 bspc config gapless_monocle       true
+
 bspc config focus_follows_pointer false
 bspc config click_to_focus        button1
 
@@ -79,9 +93,17 @@ bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
 bspc config merge_overlapping_monitors true
 
-bspc config normal_border_color "#1b1b1b"
-bspc config active_border_color "#1b1b1b"
-bspc config focused_border_color "#aaaaaa"
+## base theme
+#bspc config normal_border_color "#1b1b1b"
+#bspc config active_border_color "#1b1b1b"
+#bspc config focused_border_color "#aaaaaa"
+
+## highlighted theme
+bspc config normal_border_color "#aaaaaa"
+bspc config active_border_color "#065738"
+bspc config focused_border_color "#a80301"
+
+
 
 #
 # bspwm rules
