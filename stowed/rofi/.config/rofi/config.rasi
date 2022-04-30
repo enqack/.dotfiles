@@ -1,6 +1,6 @@
 configuration {
   show-icons: true;
-  monitor: "-4";
+  monitor: "primary";
   font: "DejaVuSansMono Nerd Font 18";
   modi: "window,run,drun,ssh,filebrowser";
 
@@ -9,9 +9,5 @@ configuration {
   }
 }
 
-//@theme "bspwm-theme"
+@theme "bspwm-theme"
 
-//@theme "/usr/share/rofi/themes/android_notification.rasi"
-//@theme "/home/sysop/.config/rofi/themes/bspwm-theme.rasi"
-//@theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"
-@theme "/home/sysop/.config/rofi/themes/bspwm-theme.rasi"
