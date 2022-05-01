@@ -10,7 +10,7 @@ bspc rule -r "*"
 #   xrandr --output DP-0 --primary --right-of DP-3
 #   -or-
 #   xrandr --ouput eDP-1 --primary --left-of HDMI-1
-if [ -f "$HOME/.config/xrandr/xrandrrc" ]
+if [ -f "$HOME/.config/xrandr/xrandrrc" ]; then
   source $HOME/.config/xrandr/xrandrrc
 fi
 
