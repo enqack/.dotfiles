@@ -45,13 +45,20 @@ export XSERVERRC="${XDG_CONFIG_HOME}/X11/xserverrc"
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
 #
-# Default apps not set by eselect or /etc/env.d/
+# Default apps
 #
 
-# export READER="zathura"
-# export BROWSER="google-chrome-stable"
-# export VIDEO="mpv"
-# export IMAGE="feh"
+# export if /etc/env.d does not exist
+if [ ! -d "/etc/env.d" ]; then
+  export READER="zathurai"
+  export BROWSER="google-chrome-stable"
+  export VIDEO="mpv"
+  export IMAGE="sxiv"
+  export EDITOR="vim"
+  export PAGER="less"
+fi
+
+# exports not set by eselect or /etc/env.d/
 export TERMINAL="alacritty"
 export COLORTERM="truecolor"
 export OPENER="xdg-open"
