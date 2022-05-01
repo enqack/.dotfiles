@@ -10,7 +10,9 @@ bspc rule -r "*"
 #   xrandr --output DP-0 --primary --right-of DP-3
 #   -or-
 #   xrandr --ouput eDP-1 --primary --left-of HDMI-1
-source $HOME/.config/xrandr/xrandrrc
+if [ -f "$HOME/.config/xrandr/xrandrrc" ]
+  source $HOME/.config/xrandr/xrandrrc
+fi
 
 $HOME/.scripts/bspwm/cleanfullscreen &
 
