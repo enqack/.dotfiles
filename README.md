@@ -1,10 +1,13 @@
 # .dotfiles managed with GNU stow
 
+Used in conjunction with https://github.com/enqack/.scripts.git
 
 ## Getting started
 
-`git clone`
+`git clone https://github.com/enqack/.scripts.git`
+
+`git clone https://github.com/enqack/.dotfiles.git`
 
 `cd .dotfiles`
 
-`stow -nvvt ~ <package>`
+`stow -nvv -d stowed -t ~ <package>`
