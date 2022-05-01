@@ -2,26 +2,35 @@
 bspc rule -r "*"
 
 #
-# autostart applications
+# Initial Configuration
 #
 
-xrandr --output DP-0 --primary --right-of DP-3
-
-sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
-
-$HOME/.scripts/polybar/launch.sh &
+# Call an xrandr config script to arrange monitors.
+# Example contents:
+#   xrandr --output DP-0 --primary --right-of DP-3
+#   -or-
+#   xrandr --ouput eDP-1 --primary --left-of HDMI-1
+source $HOME/.config/xrandr/xrandrrc
 
 $HOME/.scripts/bspwm/cleanfullscreen &
 
 $HOME/.scripts/bspwm/edge_switcher &
 
+#
+# Autostart Applications
+#
+
+sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
+
+$HOME/.scripts/polybar/launch.sh &
+
 picom -b &
 
-$HOME/.scripts/random-bg $HOME/Pictures/rotated-bg
+nitrogen --restore &
 
 dunst &
 
-xrdb -merge $HOME/.Xresources
+xrdb -merge $HOME/.Xresources &
 
 killall urxvtd
 urxvtd -q &
@@ -65,10 +74,8 @@ xset s noexpose &
 # bspwm configuration
 #
 
-# primary
-bspc monitor DP-0 -d 6 7 8 9 0
-# secondary
-bspc monitor DP-3 -d 1 2 3 4 5
+# configure desktop tags
+$HOME/.scripts/bspwm/dynamic-bspc-monitor
 
 bspc config top_padding           35
 bspc config bottom_padding        0
@@ -103,8 +110,6 @@ bspc config normal_border_color "#aaaaaa"
 bspc config active_border_color "#065738"
 bspc config focused_border_color "#a80301"
 
-
-
 #
 # bspwm rules
 #
@@ -115,9 +120,7 @@ bspc rule -a *:*:polybar-float state=floating
 
 bspc rule -a Blueman-manager state=floating
 bspc rule -a Chromium follow=true
-bspc rule -a feh state=floating
 bspc rule -a Sxiv state=floating
-bspc rule -a Gimp-2.8 state=floating
 bspc rule -a Gnome-calendar state=floating center=true
 bspc rule -a Gnome-control-center state=floating center=true
 bspc rule -a Gnome-tweaks state=floating center=true
