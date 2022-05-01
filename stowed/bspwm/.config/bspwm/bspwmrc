@@ -16,7 +16,7 @@ fi
 
 $HOME/.scripts/bspwm/cleanfullscreen &
 
-$HOME/.scripts/bspwm/edge_switcher &
+$HOME/.scripts/bspwm/edge-switcher &
 
 #
 # Autostart Applications
