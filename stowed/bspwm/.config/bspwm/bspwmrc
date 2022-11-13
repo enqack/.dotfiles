@@ -16,7 +16,10 @@ fi
 
 $HOME/.scripts/bspwm/cleanfullscreen &
 
-$HOME/.scripts/bspwm/edge-switcher &
+# Only load edge-switcher if there is one monitor
+if [ "$(xrandr --listmonitors | head -1 | cut -d " " -f 2)" -eq "1" ]; then
+  $HOME/.scripts/bspwm/edge-switcher &
+fi
 
 #
 # Autostart Applications
