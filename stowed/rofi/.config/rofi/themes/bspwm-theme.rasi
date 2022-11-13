@@ -17,6 +17,7 @@
   cyan:       #2aa198;
   black:      #000000;
   blackt:     #000000aa;
+  white:      #ffffff;
 
   spacing: 0;
   background-color: transparent;
