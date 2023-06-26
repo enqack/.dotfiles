@@ -27,7 +27,7 @@
 
 window {
   location: center;
-  width: 75%;
+  width: 50%;
   transparency: "real";
   background-color: @black;
   border: 2px;
