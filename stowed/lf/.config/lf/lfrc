@@ -43,7 +43,7 @@ map az zip
 map at tar
 map ag targz
 map ab targz
-map au unarchive
+map ae extract
 
 # Trash Mappings
 map dd trash
@@ -62,8 +62,6 @@ map mr sudomkfile
 map md mkdir
 map ms $mkscript
 map ch chmod
-map bg setwallpaper
-map o open_config
 map br $vimv $fx
 map r rename
 map H top
@@ -113,13 +111,12 @@ cmd mkdir ${{
 }}
 
 cmd mkfile ${{
-  printf "File Name: "
+  echo "File Name: "
   read ans
   $EDITOR $ans
 }}
 
 cmd chmod ${{
-
   printf "Mode Bits: "
   read ans
 
@@ -136,12 +133,6 @@ cmd sudomkfile ${{
   read ans
   sudoedit $ans
 }}
-
-cmd setwallpaper %cp "$f" ~/.config/wall.png && xwallpaper --zoom "$f"
-
-#cmd open_config  ${{
-#  $EDITOR $(bookmenu -b ~/.config/bookmenu/configs -f fzf -o)
-#}}
 
 # Trash cli bindings
 cmd trash ${{
