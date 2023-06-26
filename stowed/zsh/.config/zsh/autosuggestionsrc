@@ -1,7 +1,7 @@
 if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   # for arch
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-elif [ -f /usr/share/zsh/site-funtions/zsh-autosuggestions.zsh ]; then
+elif [ -f /usr/share/zsh/site-functions/zsh-autosuggestions.zsh ]; then
   # for gentoo
   source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
 fi
