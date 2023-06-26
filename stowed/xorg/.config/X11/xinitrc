@@ -13,6 +13,7 @@ launcher="exec dbus-launch --sh-syntax --exit-with-session"
 case $session in
   gnome         ) $(launcher) gnome-session;;
   kde           ) $(launcher) startplasma-x11;;
+  kde-wayland   ) $(launcher) startplasma-wayland;;
   bspwm         ) $(launcher) bspwm;;
   gnome-bspwm   ) $(launcher) gnome-session-bspwm;;
   qtile         ) $(launcher) qtile start;;
