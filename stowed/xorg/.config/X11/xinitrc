@@ -5,7 +5,7 @@
 # Executed by startx (run your window manager from here)
 
 # Set default to gnome if WM env var is unset
-session=${1:-"${WM:-gnome}"}
+session=${1:-"${WM:-kde}"}
 # set launch command
 launcher="exec dbus-launch --sh-syntax --exit-with-session"
 
@@ -15,7 +15,7 @@ case $session in
   kde-wayland   ) $(launcher) startplasma-wayland;;
   bspwm         ) $(launcher) bspwm;;
   gnome-bspwm   ) $(launcher) gnome-session-bspwm;;
-  qtile         ) $(launcher) qtile;;
+  qtile         ) $(launcher) qtile start;;
   openbox       ) $(launcher) openbox-session;;
   # No known session, try to run it as command
   *             ) $(launcher) $session;;
