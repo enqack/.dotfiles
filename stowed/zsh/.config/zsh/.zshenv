@@ -19,8 +19,6 @@ export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
-export XDG_DATA_DIRS="${XDG_DATA_DIRS}:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
-
 
 #
 # Fixing paths
@@ -29,7 +27,7 @@ export XDG_DATA_DIRS="${XDG_DATA_DIRS}:/var/lib/flatpak/exports/share:$HOME/.loc
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 export GEM_PATH="${XDG_DATA_HOME}/ruby/gems"
 export GEM_SPEC_CACHE="${XDG_DATA_HOME}/ruby/specs"
-#export GEM_HOME="${XDG_DATA_HOME}/ruby/gems"
+export GEM_HOME="${XDG_DATA_HOME}/ruby/gems"
 export GNUPGHOME="${XDG_DATA_HOME}/gnupg"
 export GTK_RC_FILES="${XDG_CONFIG_HOME}/gtk-1.0/gtkrc"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
@@ -68,12 +66,10 @@ fi
 export TERMINAL="alacritty"
 export COLORTERM="truecolor"
 export OPENER="xdg-open"
-export WM="kde"
+export WM="bspwm"
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # portage and related tools
 export EIX_LIMIT=0
 export EIX_LIMIT_COMPACT=0
-
-eval "$(rbenv init - zsh)"
