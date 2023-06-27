@@ -8,9 +8,13 @@ export CCACHE_DIR="/var/cache/ccache"
 export PATH="/usr/lib/colorgcc/bin:/usr/lib/ccache/bin:${PATH}:${GOPATH}/bin:${HOME}/.local/bin:${HOME}/.scripts:${HOME}/.scripts/rofi"
 
 #
-# XDG paths
+# XDG settings
 #
 
+# xdg-desktop-portal plugin
+export XDG_CURRENT_DESKTOP=xcb
+
+# XDG paths
 export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}

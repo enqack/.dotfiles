@@ -4,8 +4,9 @@
 #
 # Executed by startx (run your window manager from here)
 
-# Set default to gnome if WM env var is unset
+# Set default to kde if WM env var is unset
 session=${1:-"${WM:-kde}"}
+
 # set launch command
 launcher="exec dbus-launch --sh-syntax --exit-with-session"
 

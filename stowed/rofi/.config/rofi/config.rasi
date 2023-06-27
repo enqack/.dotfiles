@@ -7,6 +7,9 @@ configuration {
   filebrowser {
     directories-first: true;
   }
+
+  display-drun: "Select Application From XDG";
+  display-run: "Select Application From $PATH";
 }
 
 @theme "bspwm-theme"

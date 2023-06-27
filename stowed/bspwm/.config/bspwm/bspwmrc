@@ -14,17 +14,33 @@ if [ -f "$HOME/.config/xrandr/xrandrrc" ]; then
   source $HOME/.config/xrandr/xrandrrc
 fi
 
-$HOME/.scripts/bspwm/cleanfullscreen &
+killall clean-full-screen
+$HOME/.scripts/bspwm/clean-full-screen &
 
 # Only load edge-switcher if there is one monitor
 if [ "$(xrandr --listmonitors | head -1 | cut -d " " -f 2)" -eq "1" ]; then
+  killall edge-switcher
   $HOME/.scripts/bspwm/edge-switcher &
 fi
+
+xsetroot -cursor_name left_ptr &
+
+# font config
+xset +fp /usr/share/fonts &
+xset +fp ~/.fonts &
+xset fp rehash &
+fc-cache -f &
+
+# screensaver options
+xset s off &
+xset s noblank &
+xset s noexpose &
 
 #
 # Autostart Applications
 #
 
+killall sxhkd
 sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
 
 $HOME/.scripts/polybar/launch.sh &
@@ -61,19 +77,6 @@ barrier &
 
 killall pcmanfm-qt
 pcmanfm-qt --dekstop-off &
-
-xsetroot -cursor_name left_ptr &
-
-# font config
-xset +fp /usr/share/fonts &
-xset +fp ~/.fonts &
-xset fp rehash &
-fc-cache -fv &
-
-# screensaver options
-xset s off &
-xset s noblank &
-xset s noexpose &
 
 #
 # bspwm configuration
