@@ -27,6 +27,7 @@ syntax on
 "set termguicolors
 colorscheme desert
 hi Normal guibg=NONE ctermbg=NONE
+hi NonText ctermbg=NONE
 
 " Use system clipboard
 set clipboard+=unnamedplus
